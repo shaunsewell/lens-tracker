@@ -1,5 +1,6 @@
 
 import 'package:flutter/cupertino.dart';
+import 'package:lens_tracker/widgets/navigation.dart';
 
 class OverviewScreen extends StatelessWidget {
 
@@ -8,10 +9,8 @@ class OverviewScreen extends StatelessWidget {
     return CupertinoTabView(
       builder: (context){
         return CupertinoPageScaffold(
-          navigationBar: CupertinoNavigationBar(
-            middle: Text("Overview"),
-          ),
-          child: ListView(
+          navigationBar: customNavigationBar(),
+          child: Column(
             children: [
               //Ads
               //Count/Total Time row
@@ -54,12 +53,8 @@ class OverviewScreen extends StatelessWidget {
   static Color color = CupertinoColors.activeBlue;
   static IconData calendarIcon = IconData(0xF3F3, fontFamily: CupertinoIcons.iconFont, fontPackage: CupertinoIcons.iconFontPackage,);
 
-  Widget buttonSection = Container(
+  final Widget buttonSection = Container(
     padding: const EdgeInsets.only(top:12.0, bottom: 12.0),
-    decoration: BoxDecoration(
-        color: CupertinoColors.inactiveGray,
-        borderRadius: BorderRadius.circular(20.0)
-    ),
     child: Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [

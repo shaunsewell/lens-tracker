@@ -8,26 +8,27 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CupertinoTabScaffold(
-      tabBar: CupertinoTabBar(items: [
+      tabBar: CupertinoTabBar(
+        backgroundColor: CupertinoColors.darkBackgroundGray,
+        items: [
         BottomNavigationBarItem(
           icon: Icon(
               IconData(0xF3F3,      // Calender //TODO Make into an icon const
                 fontFamily: CupertinoIcons.iconFont,
                 fontPackage: CupertinoIcons.iconFontPackage,
-              )
+              ), size: 40,
           ),
-          title: Text('Home'),
         ),
         BottomNavigationBarItem(
-          icon: Icon(CupertinoIcons.book),
-          title: Text('History'),
+          icon: Icon(CupertinoIcons.book, size: 40,),
         ),
         BottomNavigationBarItem(
-          icon: Icon(CupertinoIcons.settings),
-          title: Text('Settings'),
+          icon: Icon(CupertinoIcons.settings,  size: 45,),
 
         ),
-      ]),
+      ],
+        activeColor: CupertinoColors.activeGreen,
+      ),
       tabBuilder: (context, index) {
         if (index == 0) {
           return OverviewScreen();

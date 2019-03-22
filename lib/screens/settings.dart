@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:lens_tracker/widgets/navigation.dart';
 
 class SettingsScreen extends StatelessWidget {
 
@@ -7,15 +8,8 @@ class SettingsScreen extends StatelessWidget {
     return CupertinoTabView(
       builder: (context){
         return CupertinoPageScaffold(
-            navigationBar: CupertinoNavigationBar(
-              middle: Text("Settings"),
-            ),
-            child: ListView(
-              children: [
-                Text("This is the settings"),
-
-              ],
-            )
+          navigationBar: customNavigationBar(),
+          child: Text("Settings"),
         );
       },
     );
