@@ -8,7 +8,7 @@ class HistoryScreen extends StatelessWidget {
     return CupertinoTabView(
       builder: (context){
         return CupertinoPageScaffold(
-          navigationBar: customNavigationBar(),
+          navigationBar: customNavigationBar("History"),
           child: Text("History"),
         );
       },

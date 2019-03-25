@@ -8,7 +8,7 @@ class SettingsScreen extends StatelessWidget {
     return CupertinoTabView(
       builder: (context){
         return CupertinoPageScaffold(
-          navigationBar: customNavigationBar(),
+          navigationBar: customNavigationBar("Settings"),
           child: Text("Settings"),
         );
       },
