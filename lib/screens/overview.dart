@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
-import 'package:lens_tracker/widgets/navigation.dart';
 import 'package:flutter/material.dart';
+import 'package:lens_tracker/widgets/navigation.dart';
+import 'package:lens_tracker/screens/add_wear_data.dart';
 
 class OverviewScreen extends StatelessWidget {
   @override
@@ -76,57 +77,10 @@ class OverviewScreen extends StatelessWidget {
           size: 40,
           color: CupertinoColors.activeGreen,
         ),
-        onPressed: () async {
-          await showCupertinoModalPopup<void>(
+        onPressed: () => showCupertinoModalPopup(
               context: context,
-              builder: (BuildContext context) {
-                Container(
-                  height: 200.0,
-                  padding: const EdgeInsets.only(top: 6.0),
-                  color: CupertinoColors.white,
-                  child: DefaultTextStyle(
-                    style: const TextStyle(
-                      color: CupertinoColors.black,
-                      fontSize: 22.0,
-                    ),
-                    child: GestureDetector(
-                      // Blocks taps from propagating to the modal sheet and popping.
-                      onTap: () {},
-                      child: SafeArea(
-                        top: false,
-                        child: new Text("Hello"),
-                      ),
-                    ),
-                  ),
-                );
-              }
-          );
-        }
-//        {
-//        Navigator.of(context).push(
-//          CupertinoPageRoute(builder: (context){
-//            return AddWearData("Some Dataz");
-//          }, fullscreenDialog: true)
-//        );
-//      },
-        );
-  }
-}
-
-class AddWearData extends StatelessWidget {
-  const AddWearData(this.data);
-
-  final String data;
-
-  @override
-  Widget build(BuildContext context) {
-    return CupertinoPageScaffold(
-      navigationBar: CupertinoNavigationBar(
-        middle: Text("Data page"),
-      ),
-      child: Center(
-        child: Text("Data supplied $data"),
-      ),
+              builder: (_) => AddWearData()
+        )
     );
   }
 }
