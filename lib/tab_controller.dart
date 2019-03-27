@@ -9,7 +9,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return CupertinoTabScaffold(
       tabBar: CupertinoTabBar(
-        backgroundColor: CupertinoColors.darkBackgroundGray,
+        backgroundColor: Color.fromRGBO(89, 172, 255, 1),
         items: [
         BottomNavigationBarItem(
           icon: Icon(
@@ -27,7 +27,9 @@ class HomeScreen extends StatelessWidget {
 
         ),
       ],
-        activeColor: CupertinoColors.activeGreen,
+      inactiveColor: CupertinoColors.lightBackgroundGray,
+      activeColor: CupertinoColors.black,
+      border:Border.all(color: Color.fromRGBO(89, 172, 255, 1)),
       ),
       tabBuilder: (context, index) {
         if (index == 0) {

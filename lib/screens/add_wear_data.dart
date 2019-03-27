@@ -26,7 +26,7 @@ class _AddWearDataState extends State<AddWearData> {
                 });
               },
             ),
-          ) // This is where the Update contact data fields go
+          ) 
     );
   }
 }

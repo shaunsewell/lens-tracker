@@ -9,17 +9,18 @@ class OverviewScreen extends StatelessWidget {
     return CupertinoTabView(
       builder: (context) {
         return CupertinoPageScaffold(
-            navigationBar:
-                customNavigationBar("Overview", addButton: _addButton(context)),
-            child: Column(
-              children: [
-                //Ads
-                //Count/Total Time row
-                buttonSection,
-                //Graph
-                //Button
-              ],
-            ));
+          navigationBar:
+            customNavigationBar("Overview", addButton: _addButton(context)),
+          backgroundColor: Color.fromRGBO(89, 172, 255, 1),
+          child: Column(
+            children: [
+              //Ads
+              //Count/Total Time row
+              buttonSection,
+              //Graph
+              //Button
+            ],
+          ));
       },
     );
   }
@@ -75,7 +76,7 @@ class OverviewScreen extends StatelessWidget {
         child: Icon(
           CupertinoIcons.add,
           size: 40,
-          color: CupertinoColors.activeGreen,
+          color: CupertinoColors.black,
         ),
         onPressed: () => showCupertinoModalPopup(
               context: context,

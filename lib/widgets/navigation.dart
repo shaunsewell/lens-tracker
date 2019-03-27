@@ -7,18 +7,20 @@ CupertinoNavigationBar customNavigationBar(String page, {CupertinoButton addButt
       //leading: Icon(CupertinoIcons.settings, size: 40, color: CupertinoColors.activeGreen,),
       middle: Text(
           page,
-          style: TextStyle(color: CupertinoColors.activeGreen, fontSize: 24),
+          style: TextStyle(color: CupertinoColors.black, fontSize: 24),
       ),
       trailing: addButton,
-      backgroundColor: CupertinoColors.darkBackgroundGray,
+      backgroundColor: Color.fromRGBO(89, 172, 255, 1),
+      border:Border.all(color: Color.fromRGBO(89, 172, 255, 1)),
     );
   }
   return CupertinoNavigationBar(
     middle: Text(
       page,
-      style: TextStyle(color: CupertinoColors.activeGreen, fontSize: 24),
+      style: TextStyle(color: CupertinoColors.black, fontSize: 24),
     ),
-    backgroundColor: CupertinoColors.darkBackgroundGray,
+    backgroundColor: Color.fromRGBO(89, 172, 255, 1),
+    border:Border.all(color: Color.fromRGBO(89, 172, 255, 1)),
   );
 
 }
