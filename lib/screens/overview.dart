@@ -15,13 +15,71 @@ class OverviewScreen extends StatelessWidget {
           ),
           backgroundColor: Color.fromRGBO(89, 172, 255, 1),
           child: Column(
-            children: [
+            children: [ Padding(
+              padding: const EdgeInsets.only(top: 20),
+              child: Center(
+                child: SizedBox(
+                  width: MediaQuery.of(context).size.width * 0.90,
+                  height: MediaQuery.of(context).size.height * 0.25,
+                  child: Container(
+                    width: MediaQuery.of(context).size.width * 0.90,
+                    height: MediaQuery.of(context).size.height * 0.25,
+                    decoration: BoxDecoration(
+                      color: CupertinoColors.white,
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(20)
+                      ),
+                      boxShadow: <BoxShadow>[
+                        BoxShadow(
+                          color: Colors.blueGrey,
+                          offset: Offset(2.0, 2.0),
+                          blurRadius: 20,
+                        )
+                      ],
+                    ),
+                    child: Center(child: 
+                      Text("Testing Testing")
+                    ),
+                  ),
+                ), 
+              ),
+            ), 
+            Padding(
+              padding: const EdgeInsets.only(top: 20),
+              child: Center(
+                child: SizedBox(
+                  width: MediaQuery.of(context).size.width * 0.90,
+                  height: MediaQuery.of(context).size.height * 0.50,
+                  child: Container(
+                    width: MediaQuery.of(context).size.width * 0.90,
+                    height: MediaQuery.of(context).size.height * 0.50,
+                    decoration: BoxDecoration(
+                      color: CupertinoColors.white,
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(20)
+                      ),
+                      boxShadow: <BoxShadow>[
+                        BoxShadow(
+                          color: Colors.blueGrey,
+                          offset: Offset(2.0, 2.0),
+                          blurRadius: 20,
+                        )
+                      ],
+                    ),
+                    child: Center(child: 
+                      Text("Some graph will go here later")
+                    ),
+                  ),
+                ),),
+            )
+              
               //Ads
               //Count/Total Time row
               //Graph
               //Button
             ],
-          ));
+          ),
+          );
       },
     );
   }
