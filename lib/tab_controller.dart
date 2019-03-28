@@ -21,6 +21,7 @@ class HomeScreen extends StatelessWidget {
         ),
         BottomNavigationBarItem(
           icon: Icon(CupertinoIcons.book, size: 40,),
+          
         ),
         BottomNavigationBarItem(
           icon: Icon(CupertinoIcons.settings,  size: 45,),

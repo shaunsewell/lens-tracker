@@ -1,5 +1,4 @@
 import 'package:flutter/cupertino.dart';
-import 'package:lens_tracker/widgets/navigation.dart';
 
 class HistoryScreen extends StatelessWidget {
 
@@ -8,7 +7,11 @@ class HistoryScreen extends StatelessWidget {
     return CupertinoTabView(
       builder: (context){
         return CupertinoPageScaffold(
-          navigationBar: customNavigationBar("History"),
+          navigationBar: CupertinoNavigationBar(
+            backgroundColor: Color.fromRGBO(89, 172, 255, 1),
+            border:Border.all(color: Color.fromRGBO(89, 172, 255, 1)),
+          ),
+          backgroundColor: Color.fromRGBO(89, 172, 255, 1),
           child: Text("History"),
         );
       },
