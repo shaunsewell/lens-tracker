@@ -1,16 +1,19 @@
 import 'package:flutter/material.dart';
+import "package:lens_tracker/widgets/fab_list.dart";
 
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        // appBar: AppBar(
-        //   title: Text("Lense Tracker"),
-        //   backgroundColor: Color.fromRGBO(89, 172, 255, 1),
-          
-        // ),
-        backgroundColor: Color.fromRGBO(89, 172, 255, 1),
-        body: Center(
+      // appBar: AppBar(
+      //   title: Text("Lense Tracker"),
+      //   backgroundColor: Color.fromRGBO(89, 172, 255, 1),
+        
+      // ),
+      backgroundColor: Color.fromRGBO(89, 172, 255, 1),
+      body: Padding(
+        padding: const EdgeInsets.only(bottom: 30),
+        child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
@@ -58,6 +61,9 @@ class HomePage extends StatelessWidget {
               //Button
             ],
           ),
-        ));
+        ),
+      ),
+      floatingActionButton: FancyFab(),
+    );
   }
 }
