@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lens_tracker/widgets/fab_menu.dart';
+import 'package:lens_tracker/widgets/lense_data.dart';
+
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -32,7 +34,7 @@ class HomePage extends StatelessWidget {
                         )
                       ],
                     ),
-                    child: Center(child: Text("Testing Testing")),
+                    child: Center(child: LenseData()),
                   ),
                 ), 
                 SizedBox(height: 32,),
