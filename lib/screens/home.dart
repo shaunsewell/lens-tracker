@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
-
+import 'package:lens_tracker/widgets/fab_menu.dart';
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        // appBar: AppBar(
-        //   title: Text("Lense Tracker"),
-        //   backgroundColor: Color.fromRGBO(89, 172, 255, 1),
-          
-        // ),
-        backgroundColor: Color.fromRGBO(89, 172, 255, 1),
-        body: Center(
+      // appBar: AppBar(
+      //   title: Text("Lense Tracker"),
+      //   backgroundColor: Color.fromRGBO(89, 172, 255, 1),
+        
+      // ),
+      backgroundColor: Color.fromRGBO(89, 172, 255, 1),
+      body: Padding(
+        padding: const EdgeInsets.only(top: 20,bottom: 25.0),
+        child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
@@ -51,13 +53,15 @@ class HomePage extends StatelessWidget {
                       Center(child: Text("Some graph will go here later")),
                 ),
               )
-
               //Ads
               //Count/Total Time row
               //Graph
               //Button
             ],
           ),
-        ));
+        ),
+      ),
+      floatingActionButton: FabMenu(),
+    );
   }
 }
