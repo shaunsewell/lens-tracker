@@ -35,21 +35,22 @@ class FabMenuState extends State<FabMenu> with TickerProviderStateMixin {
         return ScaleTransition(
           scale: CurvedAnimation(parent: _controller, curve: Curves.easeOut),
           child: Padding(
-            padding: const EdgeInsets.only(top: 8.0, bottom: 8.0, left: 15.0, right: 15.0),
+            padding: const EdgeInsets.only(top: 8.0, bottom: 8.0, left: 10.0, right: 10.0),
             child: FloatingActionButton(
               heroTag: null,
               backgroundColor: Theme.of(context).cardColor,
               mini: true,
               child: Icon(icons[index], color: Theme.of(context).accentColor),
               onPressed: () {
-                if (icons[index] == Icons.check) {
+                if (icons[index] == Icons.settings) {
                   
-                } else if (icons[index] == Icons.do_not_disturb) {
+                } else if (icons[index] == Icons.history){
                   
+                } else if (icons[index] == Icons.alarm_add) {
+
                 } else {
                   
                 }
-                Navigator.pop(context);
               },
             ),
           ),
