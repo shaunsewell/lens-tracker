@@ -6,12 +6,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //   title: Text("Lense Tracker"),
-      //   backgroundColor: Color.fromRGBO(89, 172, 255, 1),
-        
-      // ),
-      backgroundColor: Color.fromRGBO(89, 172, 255, 1),
+      //backgroundColor: Color.fromRGBO(89, 172, 255, 1),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.only(top: 10,bottom: 1),
