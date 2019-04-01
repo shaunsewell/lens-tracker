@@ -1,8 +1,11 @@
 class Lense {
-  var daysRemaining;
-  var totalWearTime;
-  
-  Lense(this.daysRemaining, this.totalWearTime);
+  int days;
+  Duration totalWearTime;
+  final DateTime dateStarted;
+  final String type;
+
+  Lense(this.days, this.totalWearTime, this.dateStarted, this.type);
 
   // Methods
+
 }
