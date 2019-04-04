@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:lens_tracker/models/lense.dart';
 
 class LenseData extends StatelessWidget {
-  Lense myLense =
+  final Lense myLense =
     Lense(3, new Duration(hours: 120, minutes: 30), DateTime.now(), "Fortnightly");
 
-    
+
   @override
   Widget build(BuildContext context) {
     return Container(
