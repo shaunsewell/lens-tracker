@@ -1,6 +1,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:lens_tracker/screens/home.dart';
+import 'package:lens_tracker/screens/settings.dart';
+import 'package:lens_tracker/screens/history.dart';
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -25,6 +27,10 @@ class MyApp extends StatelessWidget {
         ),
       ),
       home: HomePage(),
+      routes: <String, WidgetBuilder> {
+        '/settings': (BuildContext context) => SettingsScreen(),
+        '/history': (BuildContext context) => HistoryScreen(),
+      }
     );
   }
 }

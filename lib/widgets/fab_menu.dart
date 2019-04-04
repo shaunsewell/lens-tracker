@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:math' as math;
+import 'package:lens_tracker/screens/settings.dart';
 
 class FabMenu extends StatefulWidget {
   FabMenu();
@@ -43,9 +44,9 @@ class FabMenuState extends State<FabMenu> with TickerProviderStateMixin {
               child: Icon(icons[index], color: Theme.of(context).accentColor),
               onPressed: () {
                 if (icons[index] == Icons.settings) {
-                  
+                  Navigator.pushNamed(context, '/settings');
                 } else if (icons[index] == Icons.history){
-                  
+                  Navigator.pushNamed(context, '/history');
                 } else if (icons[index] == Icons.alarm_add) {
 
                 } else {
