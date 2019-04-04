@@ -24,7 +24,7 @@ class FabMenuState extends State<FabMenu> with TickerProviderStateMixin {
     super.initState();
     _controller = AnimationController(
       vsync: this,
-      duration: const Duration(milliseconds: 500),
+      duration: const Duration(milliseconds: 350),
     );
   }
 
