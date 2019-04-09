@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:math' as math;
-import 'package:lens_tracker/screens/settings.dart';
+import 'package:lens_tracker/screens/add_wear_data_alert.dart';
 
 class FabMenu extends StatefulWidget {
   FabMenu();
@@ -36,7 +36,8 @@ class FabMenuState extends State<FabMenu> with TickerProviderStateMixin {
         return ScaleTransition(
           scale: CurvedAnimation(parent: _controller, curve: Curves.easeOut),
           child: Padding(
-            padding: const EdgeInsets.only(top: 8.0, bottom: 8.0, left: 10.0, right: 10.0),
+            padding: const EdgeInsets.only(
+                top: 8.0, bottom: 8.0, left: 10.0, right: 10.0),
             child: FloatingActionButton(
               heroTag: null,
               backgroundColor: Theme.of(context).cardColor,
@@ -45,13 +46,12 @@ class FabMenuState extends State<FabMenu> with TickerProviderStateMixin {
               onPressed: () {
                 if (icons[index] == Icons.settings) {
                   Navigator.pushNamed(context, '/settings');
-                } else if (icons[index] == Icons.history){
+                } else if (icons[index] == Icons.history) {
                   Navigator.pushNamed(context, '/history');
                 } else if (icons[index] == Icons.alarm_add) {
-
-                } else {
-                  
-                }
+                  showDialog(
+                      context: context, builder: (context) => AddWearDataAlert());
+                } else {}
               },
             ),
           ),

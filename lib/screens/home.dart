@@ -8,6 +8,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomPadding: false,
       //backgroundColor: Color.fromRGBO(89, 172, 255, 1),
       body: SafeArea(
         child: Padding(
