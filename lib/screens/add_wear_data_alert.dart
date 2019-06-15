@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:lens_tracker/widgets/numpad.dart';
 
 class AddWearDataAlert extends StatefulWidget {
   @override
@@ -13,50 +14,59 @@ class _AddWearDataAlertState extends State<AddWearDataAlert> {
   Widget build(BuildContext context) {
     return SimpleDialog(
         contentPadding: EdgeInsets.zero,
-        backgroundColor: Colors.grey[300],
+        //backgroundColor: Colors.grey[300],
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
         children: <Widget>[
-          Container(
-              width: MediaQuery.of(context).size.width,
-              height: MediaQuery.of(context).size.height * 0.66,
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: <Widget>[
-                  Flexible(
-                    child: CupertinoPicker(
-                      scrollController: FixedExtentScrollController(initialItem: 0),
-                      itemExtent: 16.0,
-                      onSelectedItemChanged: (int value) {},
-                      children: List<Widget>.generate(25, (int index) {
-                        return Container(
-                          child: Center(
-                            child: Text('$index')
-                          ),
-                        );
-                      }),
-                    ),
-                  ),
-                  Flexible(
-                    child: CupertinoPicker(
-                      scrollController: FixedExtentScrollController(initialItem: 0),
-                      itemExtent: 16.0,
-                      onSelectedItemChanged: (int value) {},
-                      children: List<Widget>.generate(4, (int index) {
-                        final int timeIncrement = index * 15;
-                        return Container(
-                          child: Center(
-                            child: Text('$timeIncrement')
-                          ),
-                        );
-                      }),
-                    ),
-                  )
-                ],
-              ))
-          // Ok and Cancel buttons
-        ]);
+          Container( 
+            width: MediaQuery.of(context).size.width,
+            height: MediaQuery.of(context).size.height * 0.66, 
+            child: NumPad()
+          )
+        ] );
   }
 }
+
+
+// <Widget>[
+//           Container(
+//               width: MediaQuery.of(context).size.width,
+//               height: MediaQuery.of(context).size.height * 0.66,
+//               child: Row(
+//                 mainAxisSize: MainAxisSize.min,
+//                 children: <Widget>[
+//                   Flexible(
+//                     child: CupertinoPicker(
+//                       scrollController: FixedExtentScrollController(initialItem: 0),
+//                       itemExtent: 16.0,
+//                       onSelectedItemChanged: (int value) {},
+//                       children: List<Widget>.generate(25, (int index) {
+//                         return Container(
+//                           child: Center(
+//                             child: Text('$index')
+//                           ),
+//                         );
+//                       }),
+//                     ),
+//                   ),
+//                   Flexible(
+//                     child: CupertinoPicker(
+//                       scrollController: FixedExtentScrollController(initialItem: 0),
+//                       itemExtent: 16.0,
+//                       onSelectedItemChanged: (int value) {},
+//                       children: List<Widget>.generate(4, (int index) {
+//                         final int timeIncrement = index * 15;
+//                         return Container(
+//                           child: Center(
+//                             child: Text('$timeIncrement')
+//                           ),
+//                         );
+//                       }),
+//                     ),
+//                   )
+//                 ],
+//               ))
+//           // Ok and Cancel buttons
+//         ]
 
 // new CupertinoTimerPicker(
 //               mode: CupertinoTimerPickerMode.hm,
