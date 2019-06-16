@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:lens_tracker/widgets/fab_menu.dart';
 import 'package:lens_tracker/widgets/lense_data.dart';
 //import 'package:lens_tracker/models/lense.dart';
@@ -22,7 +23,7 @@ class HomePage extends StatelessWidget {
                     width: MediaQuery.of(context).size.width * 0.90,
                     height: MediaQuery.of(context).size.height * 0.25,
                     decoration: BoxDecoration(
-                      color: Colors.grey[300],
+                      color: CupertinoColors.white,
                       borderRadius: BorderRadius.all(Radius.circular(20)),
                       boxShadow: <BoxShadow>[
                         BoxShadow(
@@ -45,7 +46,7 @@ class HomePage extends StatelessWidget {
                       width: MediaQuery.of(context).size.width * 0.90,
                       height: MediaQuery.of(context).size.height * 0.50,
                       decoration: BoxDecoration(
-                        color: Colors.grey[300],
+                        color: CupertinoColors.white,
                         borderRadius: BorderRadius.all(Radius.circular(20)),
                         boxShadow: <BoxShadow>[
                           BoxShadow(
