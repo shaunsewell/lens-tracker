@@ -5,7 +5,7 @@ class NumPad extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.grey[400],
+      color: Theme.of(context).backgroundColor,
       child: GridView.count(
         // Create a grid with 2 columns. If you change the scrollDirection to
         // horizontal, this produces 2 rows.
@@ -18,7 +18,7 @@ class NumPad extends StatelessWidget {
         // Generate 9 widgets that display their index in the List.
         children: List.generate(15, (index) {
           return CupertinoButton(
-            color: Colors.grey[600],
+            color: Theme.of(context).primaryColor,
             padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
             child: Text(
               '$index'

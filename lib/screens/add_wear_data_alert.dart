@@ -14,7 +14,7 @@ class _AddWearDataAlertState extends State<AddWearDataAlert> {
   Widget build(BuildContext context) {
     return Center(
       child: Container(
-        width: MediaQuery.of(context).size.width * 0.90,
+        width: MediaQuery.of(context).size.width * 0.88,
         height: MediaQuery.of(context).size.height * 0.53,
         child: CupertinoPopupSurface(
           child: NumPad(),

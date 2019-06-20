@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:lens_tracker/screens/home.dart';
 import 'package:lens_tracker/screens/settings.dart';
 import 'package:lens_tracker/screens/history.dart';
@@ -11,10 +12,16 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(
         // Define the default Brightness and Colors
-        // brightness: Brightness.dark,
-        // primaryColor: Colors.lightBlue[800],
-        // accentColor: Colors.cyan[600],
-        scaffoldBackgroundColor: Color.fromRGBO(89, 172, 255, 1),
+        brightness: Brightness.dark,
+        primaryColor: Colors.grey[600],
+        accentColor: Colors.cyan[300],
+        scaffoldBackgroundColor: Colors.grey[900],       //Color.fromRGBO(89, 172, 255, 1),
+        floatingActionButtonTheme: FloatingActionButtonThemeData(
+          backgroundColor: Colors.grey[600],
+          foregroundColor: Colors.grey[600],
+          elevation: 1.0,
+          
+          ),
         // Define the default Font Family
         //fontFamily: 'Montserrat',
         

@@ -40,7 +40,7 @@ class FabMenuState extends State<FabMenu> with TickerProviderStateMixin {
                 top: 8.0, bottom: 8.0, left: 10.0, right: 10.0),
             child: FloatingActionButton(
               heroTag: null,
-              backgroundColor: Theme.of(context).cardColor,
+              backgroundColor: Theme.of(context).primaryColor,
               mini: true,
               child: Icon(icons[index], color: Theme.of(context).accentColor),
               onPressed: () {
@@ -59,8 +59,8 @@ class FabMenuState extends State<FabMenu> with TickerProviderStateMixin {
       }).toList()
         ..add(
           FloatingActionButton(
-            backgroundColor: Colors.white,
-            foregroundColor: Color.fromRGBO(89, 172, 255, 1),
+            backgroundColor: Theme.of(context).primaryColor,
+            foregroundColor: Theme.of(context).accentColor,
             child: AnimatedBuilder(
               animation: _controller,
               builder: (BuildContext context, Widget child) {

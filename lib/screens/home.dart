@@ -10,7 +10,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomPadding: false,
-      //backgroundColor: Color.fromRGBO(89, 172, 255, 1),
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.only(top: 10, bottom: 1),
@@ -22,18 +22,12 @@ class HomePage extends StatelessWidget {
                   child: Container(
                     width: MediaQuery.of(context).size.width * 0.90,
                     height: MediaQuery.of(context).size.height * 0.25,
-                    decoration: BoxDecoration(
-                      color: CupertinoColors.white,
-                      borderRadius: BorderRadius.all(Radius.circular(20)),
-                      boxShadow: <BoxShadow>[
-                        BoxShadow(
-                          color: Colors.black,
-                          offset: Offset(5, 5),
-                          blurRadius: 10,
-                        )
-                      ],
-                    ),
-                    child: Center(child: LenseData()),
+                    child: Card(
+                      color: Theme.of(context).primaryColor,
+                      child: LenseData(),
+                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+                      elevation: 1.0,
+                    )
                   ),
                 ),
                 SizedBox(
@@ -45,19 +39,17 @@ class HomePage extends StatelessWidget {
                     child: Container(
                       width: MediaQuery.of(context).size.width * 0.90,
                       height: MediaQuery.of(context).size.height * 0.50,
-                      decoration: BoxDecoration(
-                        color: CupertinoColors.white,
-                        borderRadius: BorderRadius.all(Radius.circular(20)),
-                        boxShadow: <BoxShadow>[
-                          BoxShadow(
-                            color: Colors.black,
-                            offset: Offset(5, 5),
-                            blurRadius: 10,
-                          )
-                        ],
-                      ),
                       child:
-                          Center(child: Text("Some graph will go here later")),
+                        Card(
+                          color: Theme.of(context).primaryColor,
+                          elevation: 1.0,
+                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+                          child: Center(
+                            child: Text(
+                              "Some graph will go here later"
+                            )
+                          ),
+                        ),
                     ),
                   ),
                 )
@@ -71,6 +63,7 @@ class HomePage extends StatelessWidget {
         ),
       ),
       floatingActionButton: FabMenu(),
+      
     );
   }
 }
