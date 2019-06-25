@@ -1,24 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:lens_tracker/models/lense.dart';
+import 'package:provider/provider.dart';
 
 class LenseData extends StatelessWidget {
-  final Lense myLense =
-    Lense(3, new Duration(hours: 120, minutes: 30), DateTime.now(), "Fortnightly");
-
-
+  
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return Consumer<Lense>(
+      builder: (context, myLense, _) => Container(
         child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
-          buildTimeRow(),
+          buildTimeRow(myLense),
           SizedBox(height: 8),
-          buildInfoRow()
-        ]));
+          buildInfoRow(myLense)
+        ])),
+    );
   }
 
-  Row buildInfoRow() {
+  Row buildInfoRow(Lense myLense) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: <Widget>[
@@ -34,7 +34,7 @@ class LenseData extends StatelessWidget {
     );
   }
 
-  Row buildTimeRow() {
+  Row buildTimeRow(Lense myLense) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
@@ -61,7 +61,7 @@ class LenseData extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Text(
-              "${myLense.totalWearTime.inHours}h ${myLense.totalWearTime.inMinutes % 60}m",
+              "${myLense.stateTotalWearTime.floor()}h ${((myLense.stateTotalWearTime - myLense.stateTotalWearTime.floor()) * 60).floor()}m",
               style: TextStyle(
                 fontSize: 36,
               ),

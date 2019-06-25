@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'dart:math' as math;
 import 'package:lens_tracker/screens/add_wear_data_alert.dart';
-
+import 'package:provider/provider.dart';
+import 'package:lens_tracker/models/lense.dart';
 class FabMenu extends StatefulWidget {
   FabMenu();
 
@@ -49,8 +50,7 @@ class FabMenuState extends State<FabMenu> with TickerProviderStateMixin {
                 } else if (icons[index] == Icons.history) {
                   Navigator.pushNamed(context, '/history');
                 } else if (icons[index] == Icons.alarm_add) {
-                  showDialog(
-                      context: context, builder: (context) => AddWearDataAlert());
+                  _navigateToDialog(context);
                 } else {}
               },
             ),
@@ -81,5 +81,13 @@ class FabMenuState extends State<FabMenu> with TickerProviderStateMixin {
           ),
         ),
     );
+  }
+
+  _navigateToDialog(BuildContext context) async {
+    final lense = Provider.of<Lense>(context);
+    final result =  await showDialog(context: context, builder: (context) => AddWearDataAlert());
+    debugPrint("$result");
+    lense.stateTotalWearTime = lense.stateTotalWearTime + result;
+    lense.stateDays = lense.stateDays + 1;
   }
 }

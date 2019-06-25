@@ -14,9 +14,9 @@ class NumPad extends StatefulWidget {
 class _NumPadState extends State<NumPad> {
 
   String _textBoxValue = "";
-
   @override
   Widget build(BuildContext context) {
+    
     return Column(
       mainAxisAlignment: MainAxisAlignment.start,
       mainAxisSize: MainAxisSize.min,
@@ -32,6 +32,7 @@ class _NumPadState extends State<NumPad> {
   }
 
   Widget _buildButtonRows(List buttonTitles, BuildContext context){
+    
     return Row(
       mainAxisSize: MainAxisSize.max,
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -53,9 +54,13 @@ class _NumPadState extends State<NumPad> {
               } else if(buttonTitles[index] == "OK") {
                 // add total to storage
                 // navigate back
-                Navigator.pop(context);
+                if(_textBoxValue.length != 0 && _textBoxValue != "." && _textBoxValue != "-"){
+                  Navigator.pop(context, double.parse(_textBoxValue));
+                } else {
+                  Navigator.pop(context, 0);
+                }
               } else if(buttonTitles[index] == "Cancel"){
-                Navigator.pop(context);
+                Navigator.pop(context, 0);
               } else if(buttonTitles[index] != "." && buttonTitles[index] != "-"){
                 _textBoxValue += buttonTitles[index];
               }
