@@ -8,16 +8,21 @@ class AddWearDataAlert extends StatefulWidget {
 }
 
 class _AddWearDataAlertState extends State<AddWearDataAlert> {
-  Duration initialtimer = new Duration();
-
   @override
   Widget build(BuildContext context) {
     return Center(
       child: Container(
         width: MediaQuery.of(context).size.width * 0.88,
-        height: MediaQuery.of(context).size.height * 0.53,
+        height: MediaQuery.of(context).size.height * 0.46,
         child: CupertinoPopupSurface(
-          child: NumPad(),
+          child: Padding(
+            padding: EdgeInsets.all(10),
+            child: new LayoutBuilder(
+              builder: (BuildContext context, BoxConstraints constraints) {
+                return NumPad(constraints: constraints,);
+              },
+            )
+          )
         ),
       ),
     );

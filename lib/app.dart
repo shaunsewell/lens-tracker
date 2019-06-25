@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
           backgroundColor: Colors.grey[600],
           foregroundColor: Colors.grey[600],
           elevation: 1.0,
-          
+
           ),
         // Define the default Font Family
         //fontFamily: 'Montserrat',
@@ -41,10 +41,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
-// return CupertinoApp(
-//   home: HomeScreen(),
-//      localizationsDelegates: [
-//        DefaultMaterialLocalizations.delegate,
-//        DefaultWidgetsLocalizations.delegate,
-//      ],

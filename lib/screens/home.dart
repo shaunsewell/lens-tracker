@@ -26,7 +26,7 @@ class HomePage extends StatelessWidget {
                       color: Theme.of(context).primaryColor,
                       child: LenseData(),
                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-                      elevation: 1.0,
+                      elevation: 2.0,
                     )
                   ),
                 ),
@@ -42,7 +42,7 @@ class HomePage extends StatelessWidget {
                       child:
                         Card(
                           color: Theme.of(context).primaryColor,
-                          elevation: 1.0,
+                          elevation: 2.0,
                           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
                           child: Center(
                             child: Text(

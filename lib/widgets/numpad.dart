@@ -1,32 +1,83 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class NumPad extends StatelessWidget {
+
+class NumPad extends StatefulWidget {
+
+  final BoxConstraints constraints;
+  NumPad({@required this.constraints});
+
+  @override
+  _NumPadState createState() => _NumPadState();
+}
+
+class _NumPadState extends State<NumPad> {
+
+  String _textBoxValue = "";
+
   @override
   Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.start,
+      mainAxisSize: MainAxisSize.min,
+      children: <Widget>[
+        _buildTextBox(context),
+        _buildButtonRows(["1", "2", "3"], context),
+        _buildButtonRows(["4", "5", "6"], context),
+        _buildButtonRows(["7", "8", "9"], context),
+        _buildButtonRows([".", "0", "-"], context),
+        _buildButtonRows(["Cancel", "OK"], context),
+      ],
+    );
+  }
+
+  Widget _buildButtonRows(List buttonTitles, BuildContext context){
+    return Row(
+      mainAxisSize: MainAxisSize.max,
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: List<Widget>.generate(buttonTitles.length, (int index) {
+        return MaterialButton(
+          color: Theme.of(context).primaryColor,
+          minWidth: (widget.constraints.minWidth - 15) / buttonTitles.length,
+          height: 44,
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+          child: Text(
+            '${buttonTitles[index]}'
+          ),
+          onPressed: () {
+            setState(() {
+              if(buttonTitles[index] == "." && !_textBoxValue.contains(".")) {
+                _textBoxValue += buttonTitles[index];
+              } else if(buttonTitles[index] == "-" && !_textBoxValue.contains("-")) {
+                _textBoxValue = buttonTitles[index] + _textBoxValue;
+              } else if(buttonTitles[index] == "OK") {
+                // add total to storage
+                // navigate back
+                Navigator.pop(context);
+              } else if(buttonTitles[index] == "Cancel"){
+                Navigator.pop(context);
+              } else if(buttonTitles[index] != "." && buttonTitles[index] != "-"){
+                _textBoxValue += buttonTitles[index];
+              }
+            });
+          },
+        );
+      }).toList()
+    
+    );
+  }
+
+  Widget _buildTextBox(BuildContext context){
     return Container(
-      color: Theme.of(context).backgroundColor,
-      child: GridView.count(
-        // Create a grid with 2 columns. If you change the scrollDirection to
-        // horizontal, this produces 2 rows.
-        crossAxisCount: 3,
-        crossAxisSpacing: 5,
-        mainAxisSpacing: 5,
-        childAspectRatio: 2.0,
-        padding: EdgeInsets.fromLTRB(10, 100, 10, 0),
-        primary: true,
-        // Generate 9 widgets that display their index in the List.
-        children: List.generate(15, (index) {
-          return CupertinoButton(
-            color: Theme.of(context).primaryColor,
-            padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
-            child: Text(
-              '$index'
-            ),
-            onPressed: ()=>{},
-          );
-        })
-      )
+      width: widget.constraints.minWidth,
+      height: 50,
+      child: Card(
+        child: Center(
+          child: Text(_textBoxValue.toString())
+        ),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+        
+      ),
     );
   }
 }
