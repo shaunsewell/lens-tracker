@@ -18,7 +18,7 @@ class _NumPadState extends State<NumPad> {
   Widget build(BuildContext context) {
     
     return Column(
-      mainAxisAlignment: MainAxisAlignment.start,
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       mainAxisSize: MainAxisSize.min,
       children: <Widget>[
         _buildTextBox(context),
@@ -39,7 +39,7 @@ class _NumPadState extends State<NumPad> {
       children: List<Widget>.generate(buttonTitles.length, (int index) {
         return MaterialButton(
           color: Theme.of(context).primaryColor,
-          minWidth: (widget.constraints.minWidth - 15) / buttonTitles.length,
+          minWidth: (widget.constraints.minWidth - 16) / buttonTitles.length,
           height: 44,
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
           child: Text(

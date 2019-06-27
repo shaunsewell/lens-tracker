@@ -86,8 +86,10 @@ class FabMenuState extends State<FabMenu> with TickerProviderStateMixin {
   _navigateToDialog(BuildContext context) async {
     final lense = Provider.of<Lense>(context);
     final result =  await showDialog(context: context, builder: (context) => AddWearDataAlert());
-    debugPrint("$result");
-    lense.stateTotalWearTime = lense.stateTotalWearTime + result;
-    lense.stateDays = lense.stateDays + 1;
+    if(result != null) {
+      lense.stateTotalWearTime = lense.stateTotalWearTime + result;
+      lense.stateDays = lense.stateDays + 1;
+    }
+    
   }
 }

@@ -13,7 +13,7 @@ class _AddWearDataAlertState extends State<AddWearDataAlert> {
     return Center(
       child: Container(
         width: MediaQuery.of(context).size.width * 0.88,
-        height: MediaQuery.of(context).size.height * 0.46,
+        height: MediaQuery.of(context).size.height * 0.39,
         child: CupertinoPopupSurface(
           child: Padding(
             padding: EdgeInsets.all(10),
