@@ -1,4 +1,4 @@
-# lens_tracker
+# Lens Tracker
 
 A Flutter application for tracking contact lens wears and statistics.
 
