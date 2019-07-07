@@ -1,16 +1,13 @@
 # lens_tracker
 
-Flutter application for tracking contact lens wears and statistics
+A Flutter application for tracking contact lens wears and statistics.
 
-## Getting Started
+## TODO
 
-This project is a starting point for a Flutter application.
+ - Add data persistence
+ - Start and End lens cycles
+ - Graphs
+ - Settings screen
+ - Lens history
+ - Shortcut integrations
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.io/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.io/docs/cookbook)
-
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.io/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
