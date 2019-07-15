@@ -30,7 +30,7 @@ class _NumPadState extends State<NumPad> {
       ],
     );
   }
-
+  /// TODO: change the hard coded sizing variables to be dynamic.
   Widget _buildButtonRows(List buttonTitles, BuildContext context){
     
     return Row(
