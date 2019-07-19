@@ -28,7 +28,7 @@ dependencies:
 
   provider: ^3.0.0+1
   sembast: ^1.17.0
-
+  path_provider: ^1.1.2
   
 dev_dependencies:
   flutter_test:

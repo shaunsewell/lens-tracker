@@ -10,7 +10,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
-      builder: (context) => Lense(0, 0, DateTime.now(), "Fortnightly"),
+      builder: (context) => Lense(days: 0, totalWearTime:  0, dateStarted: DateTime.now(), type: "Fortnightly"),
       child: Scaffold(
         resizeToAvoidBottomPadding: false,
         backgroundColor: Theme.of(context).scaffoldBackgroundColor,
