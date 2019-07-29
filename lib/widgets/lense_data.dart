@@ -61,7 +61,7 @@ class LenseData extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Text(
-              "${myLense.stateTotalWearTime.floor()}h ${((myLense.stateTotalWearTime - myLense.stateTotalWearTime.floor()) * 60).floor()}m",
+              "${myLense.totalWearTime.floor()}h ${((myLense.totalWearTime - myLense.totalWearTime.floor()) * 60).floor()}m",
               style: TextStyle(
                 fontSize: 36,
               ),

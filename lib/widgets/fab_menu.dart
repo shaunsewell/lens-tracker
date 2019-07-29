@@ -3,6 +3,7 @@ import 'dart:math' as math;
 import 'package:lens_tracker/screens/add_wear_data_alert.dart';
 import 'package:provider/provider.dart';
 import 'package:lens_tracker/models/lense.dart';
+import 'package:hive/hive.dart';
 class FabMenu extends StatefulWidget {
   FabMenu();
 
@@ -87,8 +88,10 @@ class FabMenuState extends State<FabMenu> with TickerProviderStateMixin {
     final lense = Provider.of<Lense>(context);
     final result =  await showDialog(context: context, builder: (context) => AddWearDataAlert());
     if(result != null) {
-      lense.stateTotalWearTime = lense.stateTotalWearTime + result;
-      lense.stateDays = lense.stateDays + 1;
+      lense.stateTotalWearTime = lense.totalWearTime + result;
+      lense.stateDays = lense.days + 1;
+      final box = await Hive.box("Data");
+      await box.put("Lenses", [lense.toMap()]);
     }
     
   }
